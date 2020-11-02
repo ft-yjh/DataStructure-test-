@@ -1,0 +1,4 @@
+﻿  串.c
+e:\data structure(c)\串\串\串.c(15): warning C4013: “strlen”未定义；假设外部返回 int
+e:\data structure(c)\串\串\串.c(157): warning C4098: “SubString”:“void”函数返回值
+  串.vcxproj -> E:\data structure(c)\串\Debug\串.exe
