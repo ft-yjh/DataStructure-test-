@@ -50,6 +50,20 @@ void OutStack(StackLinst * S, char * ch2, int len)
 	 } 
 }
 
+//判断字符串的长度
+int GetLength(char * ch)
+{
+	int i = 0;
+	int s_len = 0; 
+	while (ch[i] != '\0')
+	{
+		s_len++; 
+		i++; 
+	}
+	return s_len;
+	 
+ } 
+
 bool CompareStack(char * ch, char * ch2, int len)
 {
 	int i = 0;
@@ -67,6 +81,7 @@ bool CompareStack(char * ch, char * ch2, int len)
 
 int main()
 {
+	int s_len = 0;//用于接收输入的串长 
 	int len;
 	int i = 0;
 	bool flag;
@@ -76,11 +91,18 @@ int main()
 	printf("请输入串的长度:\n");
 	scanf("%d", &len);
 	ch = (char *)malloc(len * sizeof(char));
-	ch = (char *)malloc(len * sizeof(char));
+	ch2 = (char *)malloc(len * sizeof(char));
 	printf("请输入字符串\n");
-	getchar();
+	getchar();//解决输入的问题 
 	
 	gets(ch);
+	s_len = GetLength(ch);
+	if (s_len > len || s_len < len)
+	{
+		printf("输入串长度不合要求!\n");
+		exit(1);
+	}
+
 	CreateStack(&s);
 	EnterStack(&s, ch, len);
 	OutStack(&s, ch2, len);
